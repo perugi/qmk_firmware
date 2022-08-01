@@ -90,13 +90,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 /* RAISE
- * System command layer with VIM-inspired assignments.
+ * System command layer with VIM-inspired assignments and alternate locations for some hard-to-reach keys.
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      | END  | Redo |      |                    |      | Undo |      |      |PrntSc|      |
+ * |   `  |      |      | END  | Redo |      |                    |      | Undo |      |      |PrntSc|      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      | PGDN | PGUP | H/E  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
+ * |   _  |      |      | PGDN | PGUP | H/E  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
  * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
  * |      |      |  DEL |      |      | BEG  |-------|    |-------|      |      |      |      |Search|      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -105,11 +105,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
 [_RAISE] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, C(KC_RIGHT), C(KC_Y), XXXXXXX,                           XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN,     KC_PGUP, TD(TD_HOME_END),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, KC_DEL,  XXXXXXX,     XXXXXXX, C(KC_LEFT),      KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F), XXXXXXX,
-                             _______,     _______, _______,         KC_DEL, _______, _______, _______, _______
+  XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_GRV,     XXXXXXX, XXXXXXX, C(KC_RIGHT), C(KC_Y), XXXXXXX,                           XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
+  S(KC_MINS), XXXXXXX, XXXXXXX, KC_PGDN,     KC_PGUP, TD(TD_HOME_END),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+  XXXXXXX,    XXXXXXX, KC_DEL,  XXXXXXX,     XXXXXXX, C(KC_LEFT),      KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F), XXXXXXX,
+                                _______,     _______, _______,         KC_DEL,  _______, _______, _______, _______
 ),
 
 /* ADJUST
