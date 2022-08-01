@@ -77,20 +77,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
  * |   _  |   !  |   @  |   #  |   $  |   %  |-------|    |-------|   ^  |   &  |   *  |   (  |   )  |   +  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| SLO  |
+ *                   | LAlt | LGUI |LOWER | /Space  /       \Backsp\  |RAISE |BackSP| SLO  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT(
-  KC_GRV,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_F1,      KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                           KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  KC_MINS,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
+  KC_GRV,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F1,      KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+  KC_MINS,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
   S(KC_MINS), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_EQL),
-                                _______, _______, _______, _______,    _______,    _______, _______, _______
+                                _______, _______, _______, _______, KC_BSPC, _______, _______, _______
 ),
 
 /* RAISE
- * System command layer with VIM-inspired assignments
+ * System command layer with VIM-inspired assignments.
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -100,16 +100,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
  * |      |      |  DEL |      |      | BEG  |-------|    |-------|      |      |      |      |Search|      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| SLO  |
+ *                   | LAlt | LGUI |LOWER | /  DEL  /       \Enter \  |RAISE |BackSP| SLO  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 [_RAISE] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, C(KC_RIGHT), C(KC_Y), XXXXXXX,                            XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN,     KC_PGUP, TD(TD_HOME_END),                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, KC_DEL,  XXXXXXX,     XXXXXXX, C(KC_LEFT), KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F), XXXXXXX,
-                             _______,     _______, _______,        _______, _______,  _______, _______, _______
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, C(KC_RIGHT), C(KC_Y), XXXXXXX,                           XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN,     KC_PGUP, TD(TD_HOME_END),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX, KC_DEL,  XXXXXXX,     XXXXXXX, C(KC_LEFT),      KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F), XXXXXXX,
+                             _______,     _______, _______,         KC_DEL, _______, _______, _______, _______
 ),
 
 /* ADJUST
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |      |   š  |      |      |      |-------.    ,-------|      |      |      |      |      |   ć  |
+ * |      |      |   š  |      |      |      |-------.    ,-------|      |      |      |      |      |   ć  |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |   ž  |      |   č  |   €  |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_SLO] = LAYOUT(
   XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_GRV,  XXXXXXX,    XP(sh, SH), XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XP(cch, CCH),
+  XXXXXXX, XXXXXXX,    XP(sh, SH), XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XP(cch, CCH),
   XXXXXXX, XP(zh, ZH), XXXXXXX,    XP(ch, CH), X(EUR),  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______,  _______, _______, _______
 ),
