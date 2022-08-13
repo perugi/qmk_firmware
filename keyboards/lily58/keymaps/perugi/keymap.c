@@ -35,12 +35,20 @@ const uint32_t PROGMEM unicode_map[] = {
 // Tap Dance declarations
 enum {
     TD_HOME_END,
+    TD_COMMA_LOWER,
+    TD_PERIOD_LOWER,
 };
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_HOME_END] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, KC_END),
+
+    // Tap once for *, twice for ,
+    [TD_COMMA_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_8), KC_COMM),
+
+    // Tap once for *, twice for ,
+    [TD_PERIOD_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_9), KC_DOT),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -75,17 +83,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   -  |   1  |   2  |   3  |   4  |   5  |-------.    ,-------|   6  |   7  |   8  |   9  |   0  |   =  |
  * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
- * |   _  |   !  |   @  |   #  |   $  |   %  |-------|    |-------|   ^  |   &  |   *  |   (  |   )  |   +  |
+ * |   _  |   !  |   @  |   #  |   $  |   %  |-------|    |-------|   ^  |   &  | * / ,| ( / .|   )  |   +  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| SLO  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT(
-  XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_F1,      KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  KC_MINS,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
-  S(KC_MINS), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_EQL),
+  XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,         XXXXXXX, XXXXXXX,
+  KC_F1,      KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,          KC_F10,          KC_F11,  KC_F12,
+  KC_MINS,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,           KC_9,            KC_0,    KC_EQL,
+  S(KC_MINS), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), TD_COMMA_LOWER, TD_PERIOD_LOWER, S(KC_0), S(KC_EQL),
                                 _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
@@ -98,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |E/LCTL|   !  |   ~  | PGDN | PGUP | H/E  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
  * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
- * |LShift|      |  DEL |      |      | BEG  |-------|    |-------|      |      |      |      |Search|      |
+ * |LShift|      |  DEL |      |      | BEG  |-------|    |-------|     |      |      |      |Search|      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| SLO  |
  *                   |      |      |      |/       /         \      \ |      |      |      |
