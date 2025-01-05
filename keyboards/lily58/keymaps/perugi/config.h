@@ -42,9 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // Underglow
-/*
 #undef RGBLED_NUM
-#define RGBLED_NUM 14    // Number of LEDs
+#define RGBLED_NUM 6 // Number of LEDs
 #define RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_SLEEP
-*/
