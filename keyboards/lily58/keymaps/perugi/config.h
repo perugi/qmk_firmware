@@ -21,28 +21,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* Select hand configuration */
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
 
+/* Tap dance */
 #define TAPPING_TERM 180
-#define TAPPING_TERM_PER_KEY
+#define QUICK_TAP_TERM 0
 
-#undef RGBLED_NUM
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 27
-#define RGBLIGHT_LIMIT_VAL 120
-#define RGBLIGHT_HUE_STEP 10
-#define RGBLIGHT_SAT_STEP 17
-#define RGBLIGHT_VAL_STEP 17
-
+/* Unicode OS support */
 #define UNICODE_SELECTED_MODES UC_LNX, UC_WINC
 
-#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+/* Caps word */
+#define CAPS_WORD_INVERT_ON_SHIFT
 
-// Underglow
-#undef RGBLED_NUM
-#define RGBLED_NUM 6 // Number of LEDs
-#define RGBLIGHT_ANIMATIONS
-#define RGBLIGHT_SLEEP
+/* Backlight */
+// #define BACKLIGHT_PIN 1
+
+// #undef RGBLED_NUM
+// #define RGBLIGHT_ANIMATIONS
+// #define RGBLED_NUM 27
+// #define RGBLIGHT_LIMIT_VAL 120
+// #define RGBLIGHT_HUE_STEP 10
+// #define RGBLIGHT_SAT_STEP 17
+// #define RGBLIGHT_VAL_STEP 17
+
+// // Underglow
+// #undef RGBLED_NUM
+// #define RGBLED_NUM 6 // Number of LEDs
+// #define RGBLIGHT_ANIMATIONS
+// #define RGBLIGHT_SLEEP
