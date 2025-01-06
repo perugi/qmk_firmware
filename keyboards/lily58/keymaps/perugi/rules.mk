@@ -8,8 +8,8 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 AUDIO_ENABLE = no           # Audio output
 RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
-OLED_ENABLE= yes     # OLED display
-UNICODEMAP_ENABLE = yes      # Enable UNICODE, for sending SLO characters
+OLED_ENABLE= yes            # OLED display
+UNICOCE_COMMON = yes        # Enable UNICODE, for sending SLO characters
 CAPS_WORD_ENABLE = yes      # Enable Caps Lock for a word (activate by double tap LSHIFT)
 TAP_DANCE_ENABLE = yes
 
