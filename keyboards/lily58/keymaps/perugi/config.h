@@ -36,13 +36,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef RGBLIGHT_LED_COUNT
 #define RGBLIGHT_LED_COUNT 70
 #define RGBLED_SPLIT {35, 35}
-#define RGBLIGHT_LIMIT_VAL 120
-#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_LIMIT_VAL 255
+#define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 17
 #define RGBLIGHT_VAL_STEP 17
-
-// // Underglow
-// #undef RGBLED_NUM
-// #define RGBLED_NUM 6 // Number of LEDs
-// #define RGBLIGHT_ANIMATIONS
-// #define RGBLIGHT_SLEEP
+#define RGBLIGHT_EFFECT_STATIC_LIGHT
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
