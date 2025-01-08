@@ -24,7 +24,7 @@ const uint32_t PROGMEM unicode_map[] = {
 
 // Tap Dance declarations
 enum {
-    TD_HOME_END,
+    TD_END_HOME,
     TD_COMMA_LOWER,
     TD_PERIOD_LOWER,
     TD_COLON_LOWER,
@@ -32,16 +32,14 @@ enum {
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_HOME_END] = ACTION_TAP_DANCE_DOUBLE(KC_HOME, KC_END),
+    // Tap once for End, twice for Home
+    [TD_END_HOME] = ACTION_TAP_DANCE_DOUBLE(KC_END, KC_HOME),
 
     // Tap once for *, twice for ,
     [TD_COMMA_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_8), KC_COMM),
 
     // Tap once for (, twice for .
     [TD_PERIOD_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_9), KC_DOT),
-    // Tap once for ), twice for :
-    [TD_COLON_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_0), S(KC_SCLN)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -77,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * |E/LCTL|   1  |   2  |   3  |   4  |   5  |-------.    ,-------|   6  |   7  |   8  |   9  |   0  |   =  |
      * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
-     * |LShift|   !  |   @  |   #  |   $  |   %  |-------|    |-------|   ^  |   &  | * / ,| ( / .| ) / :|   +  |
+     * |LShift|   !  |   @  |   #  |   $  |   %  |-------|    |-------|   ^  |   &  | * / ,| ( / .|   )  |   +  |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
      *                   | LGUI | LAlt |LOWER | /  DEL  /       \Enter \  |RAISE |BackSP| SLO  |
      *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -87,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
         _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
-        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), TD(TD_COMMA_LOWER), TD(TD_PERIOD_LOWER), TD(TD_COLON_LOWER), S(KC_EQL),
+        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), TD(TD_COMMA_LOWER), TD(TD_PERIOD_LOWER), S(KC_0), S(KC_EQL),
                                    _______, _______, _______, KC_DEL,  _______, _______, _______, _______
         ),
 
@@ -98,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * |      |      |      | END  | Redo |      |                    |      | Undo |      |      |PrntSc|      |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * |E/LCTL|   !  |   ~  | PGDN | PGUP | H/E  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
+     * |E/LCTL|   !  |   ~  | PGDN | PGUP | E/H  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
      * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
      * |LShift|      |  DEL |      |      | BEG  |-------|    |-------|      |      |      |      |Search|      |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -109,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,     XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX,   C(KC_RIGHT), C(KC_Y), XXXXXXX,                           XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
-        _______, S(KC_1), S(KC_GRV), KC_PGDN,     KC_PGUP, TD(TD_HOME_END),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,         XXXXXXX,
+        _______, S(KC_1), S(KC_GRV), KC_PGDN,     KC_PGUP, TD(TD_END_HOME),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,         XXXXXXX,
         _______, XXXXXXX, KC_DEL,    XXXXXXX,     XXXXXXX, C(KC_LEFT),      KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F),         XXXXXXX,
                                      _______,     _______, _______,         _______, _______, _______, _______, _______
         ),
