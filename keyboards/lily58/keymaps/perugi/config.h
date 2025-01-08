@@ -25,13 +25,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Tap dance */
 #define TAPPING_TERM 150
-// #define QUICK_TAP_TERM 0
 
 /* Unicode OS support */
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
 
 /* Caps word */
-#define CAPS_WORD_INVERT_ON_SHIFT
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 #undef RGBLIGHT_LED_COUNT
 #define RGBLIGHT_LED_COUNT 70
