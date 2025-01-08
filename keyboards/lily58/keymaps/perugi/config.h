@@ -24,25 +24,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 
 /* Tap dance */
-#define TAPPING_TERM 180
-#define QUICK_TAP_TERM 0
+#define TAPPING_TERM 150
+// #define QUICK_TAP_TERM 0
 
 /* Unicode OS support */
-#define UNICODE_SELECTED_MODES UC_LNX, UC_WINC
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
 
 /* Caps word */
 #define CAPS_WORD_INVERT_ON_SHIFT
 
-/* Backlight */
-// #define BACKLIGHT_PIN 1
-
-// #undef RGBLED_NUM
-// #define RGBLIGHT_ANIMATIONS
-// #define RGBLED_NUM 27
-// #define RGBLIGHT_LIMIT_VAL 120
-// #define RGBLIGHT_HUE_STEP 10
-// #define RGBLIGHT_SAT_STEP 17
-// #define RGBLIGHT_VAL_STEP 17
+#undef RGBLIGHT_LED_COUNT
+#define RGBLIGHT_LED_COUNT 70
+#define RGBLED_SPLIT {35, 35}
+#define RGBLIGHT_LIMIT_VAL 120
+#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
 
 // // Underglow
 // #undef RGBLED_NUM

@@ -11,14 +11,14 @@ enum layer_number {
 enum unicode_names { sh, SH, ch, CH, cch, CCH, zh, ZH, EUR };
 
 const uint32_t PROGMEM unicode_map[] = {
-    [sh]  = 0x0161, // š
-    [SH]  = 0x0160, // Š
-    [ch]  = 0x010D, // č
-    [CH]  = 0x010C, // Č
-    [cch] = 0x0107, // ć
-    [CCH] = 0x0106, // Ć
-    [zh]  = 0x017E, // ž
-    [ZH]  = 0x017D, // Ž
+    [sh]  = 0x161, // š
+    [SH]  = 0x160, // Š
+    [ch]  = 0x10D, // č
+    [CH]  = 0x10C, // Č
+    [cch] = 0x107, // ć
+    [CCH] = 0x106, // Ć
+    [zh]  = 0x17E, // ž
+    [ZH]  = 0x17D, // Ž
     [EUR] = 0x20AC  // €
 };
 
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
         _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
-        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_EQL),
+        _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LCBR, KC_RCBR, S(KC_6), S(KC_7), TD(TD_COMMA_LOWER), TD(TD_PERIOD_LOWER), TD(TD_COLON_LOWER), S(KC_EQL),
                                    _______, _______, _______, KC_DEL,  _______, _______, _______, _______
         ),
 
@@ -153,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SLO] = LAYOUT(
         XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        _______, XXXXXXX,    UP(sh, SH), XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UP(cch, CCH),
+        _______, XXXXXXX,    UP(0, 1), XXXXXXX,    XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UP(cch, CCH),
         _______, UP(zh, ZH), XXXXXXX,    UP(ch, CH), UM(EUR),  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                          _______,    _______, _______, _______, _______, _______, _______, _______
     ),
