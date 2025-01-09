@@ -126,11 +126,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* ADJUST
      * ,-----------------------------------------.                    ,-----------------------------------------.
-     * | POff |      |      |      |      |      |                    |      |      |      |      |      |      |
+     * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |                    |      |Unicde|      |      |      |
+     * |      | HUp  | SUp  | LUp  |      | LTog |                    |      |Unicde|      |      |      |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------.    ,-------| Prev |Vol D |Vol U | Next |      |      |
+     * |      | HDwn | SDwn | LDwn |      |      |      |-------.    ,-------| Prev |Vol D |Vol U | Next |      |      |
      * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
      * |      |      |      |      |      |      |-------|    |-------| Play | Mute |      |      |      |      |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -139,9 +139,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                   `----------------------------'           '------''--------------------'
      */
     [_ADJUST] = LAYOUT(
-        KC_PWR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, UG_HUEU, UG_SATU, UG_VALU, UG_SPDU, UG_TOGG,                   XXXXXXX, UC_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, UG_HUED, UG_SATD, UG_VALD, UG_SPDD, XXXXXXX,                   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX,
+        XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, UG_HUEU, UG_SATU, UG_VALU, XXXXXXX, UG_TOGG,                   XXXXXXX, UC_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, UG_HUED, UG_SATD, UG_VALD, XXXXXXX, XXXXXXX,                   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UG_PREV, UG_NEXT, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                    _______, _______, _______, _______, _______, _______, _______, _______
         ),
