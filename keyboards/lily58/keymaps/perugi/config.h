@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Tap dance */
 #define TAPPING_TERM 150
+#define TAPPING_TERM_PER_KEY
 
 /* Unicode OS support */
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
@@ -41,3 +42,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_VAL_STEP 17
 #define RGBLIGHT_EFFECT_STATIC_LIGHT
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#define RGBLIGHT_SLEEP

@@ -42,9 +42,15 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_PERIOD_LOWER] = ACTION_TAP_DANCE_DOUBLE(S(KC_9), KC_DOT),
 };
 
-        // How long (in milliseconds) to wait between animation steps for each of the "Swirling rainbow" animations
-const uint8_t RGBLED_RAINBOW_SWIRL_INTERVALS[] PROGMEM = {100};
-
+// Larger time for double tap for Caps Word.
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_LSFT:
+            return TAPPING_TERM + 100;
+        default:
+            return TAPPING_TERM;
+    }
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
