@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * |      |      |      | END  | Redo |      |                    |      | Undo |      |      |PrntSc|      |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * | Esc  |   !  |   ~  | PGDN | PGUP | E/H  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
+     * | Ctl  |   !  |   ~  | PGDN | PGUP | E/H  |-------.    ,-------| Left | Down |  Up  |Right |      |      |
      * |------+------+------+------+------+------|   {   |    |    }  |------+------+------+------+------+------|
      * |LShift|      |  DEL |      |      | BEG  |-------|    |-------|      |      |      |      |Search|      |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,     XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX,   C(KC_RIGHT), C(KC_Y), XXXXXXX,                           XXXXXXX, C(KC_Z), XXXXXXX, XXXXXXX, KC_PRINT_SCREEN, XXXXXXX,
-        KC_ESC,  S(KC_1), S(KC_GRV), KC_PGDN,     KC_PGUP, TD(TD_END_HOME),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,         XXXXXXX,
+        KC_LCTL,  S(KC_1), S(KC_GRV), KC_PGDN,     KC_PGUP, TD(TD_END_HOME),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,         XXXXXXX,
         _______, XXXXXXX, KC_DEL,    XXXXXXX,     XXXXXXX, C(KC_LEFT),      KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, C(KC_F),         XXXXXXX,
                                      _______,     _______, _______,         _______, _______, _______, _______, _______
         ),
